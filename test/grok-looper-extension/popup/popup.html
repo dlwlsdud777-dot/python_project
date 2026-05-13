@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok Looper</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grok Looper</h1>
+            <p class="subtitle">자동 루프 영상 생성기</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <label for="imageInput" class="upload-label">
+                    <span class="icon">📁</span>
+                    <span class="text">이미지 업로드 (다중 선택 가능)</span>
+                </label>
+                <input type="file" id="imageInput" accept="image/*" multiple hidden>
+                <div id="fileCount" class="file-count">선택된 파일 없음</div>
+            </div>
+
+            <div class="action-section">
+                <button id="startBtn" class="btn primary">시작하기</button>
+                <button id="stopBtn" class="btn secondary" disabled>중지</button>
+            </div>
+
+            <div class="status-section">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="status-info">
+                    <span id="currentStatus">준비됨</span>
+                    <span id="progressText">0 / 0</span>
+                </div>
+            </div>
+
+            <div class="log-section">
+                <h3>활동 로그</h3>
+                <div id="logContent" class="log-content">
+                    <div class="log-item info">프로그램이 준비되었습니다.</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Grok Looper Assistant</p>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
