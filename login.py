@@ -60,6 +60,34 @@ def run_flow():
         # 버튼 클릭
         page.get_by_role("button", name="arrow_forward 만들기").click()
 
+        # 이미지 생성 완료될 때까지 대기 (최대 5분)
+        page.wait_for_selector(
+            "img[alt='생성된 이미지']",
+            timeout=300000
+        )
+        print("이미지 생성 완료!")
+
+        # 딜레이 추가
+        page.wait_for_timeout(2000)
+
+        # 생성된 이미지 우클릭 → 다운로드
+        image = page.locator("img[alt='생성된 이미지']").first
+        image.click(button="right")
+        page.wait_for_timeout(1000)
+        
+        # 다운로드 hover → 1K 원본 크기 클릭
+        page.get_by_role("menuitem", name="다운로드").hover()
+        page.wait_for_timeout(500)
+        with page.expect_download() as download_info:
+            page.get_by_role("menuitem", name="1K 원본 크기").click()
+        download = download_info.value
+        print(f"다운로드 완료! 파일명: {download.suggested_filename}")
+
+        # 저장 경로 지정
+        save_path = rf"C:\Users\210830\Downloads\한걸음더\{download.suggested_filename}"
+        download.save_as(save_path)
+        print(f"저장 완료! → {save_path}")
+
         input("완료 후 Enter...")
         browser.close()
 
