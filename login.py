@@ -72,6 +72,11 @@ def run_flow(prompts):
 
             # 만들기 버튼 클릭
             page.get_by_role("button", name="arrow_forward 만들기").click()
+                        
+            # 5번마다 30초 휴식
+            if index > 0 and index % 5 == 0:
+                print("잠시 휴식 중... (30초)")
+                page.wait_for_timeout(30000)
 
             # 현재 이미지 개수 기억
             expected_count = index + 1
@@ -79,7 +84,7 @@ def run_flow(prompts):
             # 새 이미지 생성 완료 대기
             page.wait_for_function(
                 f"document.querySelectorAll('img[alt=\"생성된 이미지\"]').length >= {expected_count}",
-                timeout=300000
+                timeout=600000
             )
             print(f"[{image_number}/{total}] 이미지 생성 완료!")
             page.wait_for_timeout(2000)
