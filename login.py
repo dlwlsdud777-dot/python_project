@@ -1,5 +1,5 @@
 # from operator import index
-from random import random
+import random
 import subprocess
 import re
 import json
@@ -15,6 +15,9 @@ def refresh_session():
     print("세션 만료! 재로그인 필요...")
     subprocess.run(["python", "session.py"])
     print("세션 갱신 완료! 다시 실행해주세요.")
+
+def human_delay(page, min_ms=500, max_ms=2000):
+    page.wait_for_timeout(random.randint(min_ms, max_ms))
 
 def run_flow(prompts):
     total = len(prompts)
@@ -58,9 +61,13 @@ def run_flow(prompts):
                 page.wait_for_timeout(3000)
 
             # 에셋 추가
+            human_delay(page, 800, 2000)
             page.get_by_role("button", name="add_2 만들기").click()
+            human_delay(page, 500, 1500)
             page.get_by_role("button", name=re.compile(r"arrow_drop_down")).first.click()
+            human_delay(page, 300, 1000)
             page.get_by_role("menuitem", name="샘플이미지").click()
+            human_delay(page, 300, 1000)
             page.get_by_test_id("virtuoso-item-list").get_by_role("img", name="적용1.png").click()
 
             print("에셋 추가 완료!")
@@ -79,14 +86,16 @@ def run_flow(prompts):
                     page.wait_for_timeout(1000)
                     page.get_by_role("tab", name="1x").click()
                     page.get_by_role("tab", name="1x").press("Escape")
-                    
+
             # 만들기 버튼 클릭
+            human_delay(page, 1000, 3000)
             page.get_by_role("button", name="arrow_forward 만들기").click()
                         
             # 5번마다 30초 휴식
             if index > 0 and index % 5 == 0:
-                print("잠시 휴식 중... (30초)")
-                page.wait_for_timeout(30000)
+                rest = random.randint(60000, 180000)
+                print(f"잠시 휴식 중... ({rest//1000}초)")
+                page.wait_for_timeout(rest) 
 
             # 현재 이미지 개수 기억
             expected_count = (index % 10) + 1
@@ -97,7 +106,7 @@ def run_flow(prompts):
                 timeout=600000
             )
             print(f"[{image_number}/{total}] 이미지 생성 완료!")
-            page.wait_for_timeout(2000)
+            human_delay(page, 2000, 4000)
 
             # 우클릭 → 다운로드, 가장 최근 이미지 = nth(0)
             image = page.locator("img[alt='생성된 이미지']").nth(0)   
