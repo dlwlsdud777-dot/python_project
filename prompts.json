@@ -1,62 +1,152 @@
 [
   {
     "image_number": 1,
-    "script_text": "강아지가 떠난 날 밤, 저는 밥을 먹다가 울었어요. 아무것도 아닌데. 그냥 밥그릇이 눈에 들어왔는데. 언제나 그 자리에 있던 작은 그릇이.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a young person sitting at a kitchen dining table during late night, looking down with trembling shoulders at a stainless steel dog bowl resting empty on the kitchen tile floor next to the table refrigerator, a modern dining room with patterned kitchen wallpaper, half-eaten warm white rice in a ceramic bowl with a spoon rested beside it, cold fluorescent kitchen lighting casting simple shadows, deep blue and muted purple color palette showing deep loneliness, heartbroken facial expression with small sweat drops and subtle motion lines near the eyes, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "주말이 끝났습니다. 또다시 찾아온 월요일 아침. 알람 소리에 눈을 뜹니다. 그런데 이상합니다. 몸이 천근만근 무겁습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a businessman sitting on the edge of his bed in the early morning, holding his head in his hands with a tired expression, alarm clock on the nightstand showing 7:00 AM, morning sunlight filtering through the window blinds, cluttered bedroom with clothes on a chair and a half-open closet, cold blue morning tones with faint yellow highlights, weary and heavy atmosphere, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, sweat drops, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 2,
-    "script_text": "그게 다인데. 그 순간 너무 무너져서, 숟가락을 내려놓고 한참을 그냥 앉아 있었어요. 혹시 이런 경험 있으세요?",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of the person sitting frozen on a modern kitchen chair, hands weakly resting on the knees, staring blankly at the empty floor area where the pet bed used to be, dimly lit dining room environment with an overhead hanging lamp, a digital clock on the wall showing 11:30 PM, dark teal tones with warm golden highlights from the lamp, tense and utterly exhausted mood, downcast eyes with sorrowful emotion marks, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "평일에 야근하며 정신없이 일하던 때보다, 주말 내내 쉬고 일어난 지금이 더 피곤하게 느껴집니다. 분명 쉬었습니다. 토요일에는 늦잠도 잤고, 유튜브도 봤고, 드라마도 몰아봤고, 소파에 누워 아무것도 하지 않았습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a tired man lying slumped on a living room sofa, staring blankly at a glowing smartphone screen, messy coffee table with empty snack wrappers and a half-empty mug, sunlight shifting from afternoon to evening through the window, cozy but lethargic atmosphere with warm amber and soft purple tones, lazy posture with limp limbs, completely filled background with bookshelves and indoor plants, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 3,
-    "script_text": "강아지가 없어진 뒤에, 이상하게 아무렇지도 않다가. 갑자기 아무 이유 없이, 아무 데서나. 그냥 무너지는 것 같은 느낌.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of the person walking down a crowded city sidewalk under an overcast grey afternoon sky, hundreds of busy faceless pedestrians walking past in blurred motion lines, the person looking down at their hands with a deeply isolated and hollow facial expression, urban storefronts with glowing signboards and a concrete walkway in the background, desaturated blue and heavy grey tones, overwhelming sadness and feeling of emptiness, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "그런데 왜 회복된 느낌이 들지 않을까요? 어쩌면 이런 생각도 해보셨을 겁니다. \"나이가 들어서 그런 건가.\" \"이제는 쉬어도 회복이 안 되는 건가.\" \"앞으로 평생 이렇게 피곤하게 살아야 하나.\"",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a reflective man looking at his own tired face in a bathroom mirror, holding his chin with a skeptical and worried expression, dim fluorescent bathroom light, toothbrushes in a holder and a wrinkled towel hanging on the wall, heavy sigh indicated by subtle motion lines, cool teal and pale green tones creating a melancholy mood, fully detailed bathroom interior with tiled walls and a small cabinet, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 4,
-    "script_text": "주변에선 이런 말을 해요. \"그래도 강아지잖아.\" \"시간이 지나면 나아져.\" \"또 키우면 되지.\"",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of the person sitting at a brightly lit office desk with computer monitors, two colleagues standing nearby talking and gesturing with smiling faces while the person stares down at a coffee mug, modern cubicle office environment with stacked documents, fluorescent office lights casting flat lighting, warm office ambient colors contrasting with the person's cool blue outline, uncomfortable and stressed expression with sweat drops emotion marks, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "그런데 오늘 영상에서 말씀드릴 내용은 조금 다릅니다. 어쩌면 여러분은 지금까지 휴식을 완전히 잘못 알고 있었을지도 모릅니다. 왜 아무것도 안 했는데 피곤한지, 왜 주말 내내 쉬어도 월요일이 괴로운지, 그리고 뇌가 진짜 회복되는 휴식은 무엇인지 이야기해보겠습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a narrator standing in a cozy, modern studio room, looking directly at the viewer with an informative and friendly expression, large bookshelves filled with colorful books and a warm desk lamp in the background, warm golden hour sunlight streaming into the room, welcoming and intriguing atmosphere with soft orange and deep blue tones, expressive hand gestures pointing slightly forward, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 5,
-    "script_text": "\"그 말이 틀린 건 아니에요. 근데 왜 이렇게 아프게 들릴까요. 오늘은 그 이유를 말씀드리려고 해요.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of the person standing alone at a rainy bus stop shelter during late afternoon, holding a closed umbrella tightly with hands pressing against their chest, rain streaks running down the glass panel of the shelter with city streetlights reflecting outside, muted teal and dark indigo colors with warm amber car headlight reflections, heavy heart and melancholy mood, lips pursed in distress, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "영상 끝까지 보시면 휴식에 대한 생각이 꽤 달라질 수 있습니다. 혹시 이런 경험 있으신가요? 주말 내내 집에서 쉬었는데 일요일 저녁이 되면 오히려 더 우울하고 무기력해지는 느낌. 바쁠 때는 적어도 피곤한 이유라도 있습니다. 하지만 특별히 한 것도 없는데 피곤하니 오히려 자신을 탓하게 됩니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a person sitting alone at a kitchen table during late Sunday evening, looking down with a discouraged and exhausted expression, a wall clock pointing to 10:00 PM, a half-empty glass of water on the wooden table, dark shadows cast by the kitchen lights, somber and helpless atmosphere with deep blue and shadow tones, slumped posture conveying helplessness, detailed kitchen cabinets and a refrigerator in the background, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 6,
-    "script_text": "왜 반려견과의 이별이 이렇게 힘든 건지. 왜 나만 이렇게 오래가는 것 같은 건지. 그리고 이 감정을, 어떻게 하면 조금이라도 놓아줄 수 있는지. 심리학과 뇌과학이 이미 그 답을 갖고 있어요.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of the person sitting on a cozy living room sofa looking towards a floating abstract glowing brain icon and psychological chart graphics floating in front of them, a warm cozy living room background with a bookshelf and a houseplant, soft ambient indoor lighting, soothing pastel orange and soft green tones, curious yet hopeful facial expression with sparkle emotion marks in the eyes, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "\"내가 의지가 부족한 건가.\" \"체력이 너무 약해진 건가.\" 그런데 사실 문제는 의지나 체력이 아닐 수 있습니다. 문제는 우리가 휴식을 바라보는 방식에 있습니다. 많은 사람들은 휴식을 이렇게 생각합니다. \"아무것도 안 하면 쉬는 거다.\" \"누워 있으면 회복된다.\" \"유튜브 보면서 시간 보내면 휴식이다.\"",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a frustrated man sitting at a desk, rubbing his temples in distress, a glowing laptop screen displaying overwhelming unread emails, scattered sticky notes and crumpled papers on the desk, chaotic and stressed mood with neon purple and sharp red highlights, tense body language with a furrowed brow, detailed office room background with a file cabinet and a window showing a dark night sky, bold outlines, flat color fill, cel-shading, screen tone, sweat drops, motion lines, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 7,
-    "script_text": "끝까지 보시면, 지금 이 감정이 왜 당연한 건지 이해하게 되실 거예요. 강아지가 떠나고 나면, 이상한 일들이 생겨요. 아침에 눈 뜨면 제일 먼저 강아지 있는 곳을 봐요. 근데 없죠. 그 순간이 매일, 반복돼요.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of the person waking up early morning, sitting upright in bed under a beige blanket and looking instantly towards a blank wooden floor corner where a pet cushion used to sit, bedroom interior with early morning blue sunlight filtering through the window blinds, soft pastel blue and cream color palette, startled and yearning facial expression with wide eyes and light sweat drop marks, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "하지만 뇌는 생각보다 단순하지 않습니다. 여기 흥미로운 연구가 있습니다. 연구자들이 사람들에게 아무것도 하지 말고 가만히 있으라고 했습니다. 그리고 뇌 활동을 관찰했습니다. 결과는 예상 밖이었습니다. 사람들이 아무것도 하지 않을 때 오히려 특정 뇌 영역이 활발하게 움직이고 있었던 겁니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a medical research laboratory, two researchers in white lab coats observing brain scan data on large computer monitors, glowing digital brain diagrams with bright active spots, stacks of scientific documents and medical equipment on the tables, analytical and scientific atmosphere with cool white fluorescent and neon blue lighting, focused expressions with curious eyes, detailed laboratory background filled with wires and servers, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 8,
-    "script_text": "현관문 열면 달려올 것 같아서 멈칫하게 되고. 소파에 앉으면 옆에 올 것 같아서 자꾸 옆을 보고. 자려고 누우면 발치에 무게가 느껴질 것 같아서, 발을 움직이게 되고.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of the person opening a brown wooden apartment front door coming back from outside during dusk, halting mid-step with one hand holding the doorknob and looking down at the empty entryway mat, a shoe rack and neatly arranged keys on a small tray in the entryway background, warm twilight orange mixed with indoor shadows, longing and hesitant posture with subtle motion lines around the head, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "마치 회사 직원들은 모두 퇴근했는데 야근팀만 남아서 밤새 일하는 것처럼 말입니다. 뇌과학에서는 이것을 기본 모드 네트워크라고 부릅니다. 어려운 용어는 기억하지 않으셔도 됩니다. 쉽게 말하면 '생각 공장' 정도로 이해하시면 됩니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a darkened corporate office at night, a small group of overworked office workers typing furiously at their glowing desks, stacks of documents and coffee cups piled high, shadows casting long shapes across the empty cubicles, frantic and high-pressure atmosphere with cold blue tones and harsh white monitor light, fast-paced hand movements with speed lines, fully detailed office interior with cubicle walls and printers, bold outlines, flat color fill, cel-shading, screen tone, speed lines, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 9,
-    "script_text": "이게 며칠이 아니에요. 몇 주, 몇 달이 지나도 그래요. 더 이상한 건 뭔지 아세요?",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of the person walking slowly through a green public park during bright daytime, surrounded by vibrant green lawns and tall blooming cherry blossom trees, looking down at their empty hand that used to hold a leash, bright sunny day lighting with vibrant green and soft pink palette, persistent lingering sorrow despite the beautiful weather, sad eyes with small tear drops emotion marks, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "우리 뇌는 가만히 있는 순간에도 멈추지 않습니다. 과거를 떠올리고, 미래를 걱정하고, 실수했던 일을 복기하고, 아직 오지 않은 문제를 미리 시뮬레이션합니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a man floating inside a surreal cosmic space representing his mind, surrounded by glowing gears, clocks, and floating sheets of paper with handwritten worry notes, endless streams of complex thoughts winding around him, overwhelmed and chaotic atmosphere with vibrant violet and deep space blue tones, tightly shut eyes with a stressed facial expression, detailed background of abstract thought webs and neon sparks, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 10,
-    "script_text": "어떤 날은 멀쩡해요. 웃기도 하고, 밥도 잘 먹고, 일도 해요.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of the person sitting happily at a modern cafe table during midday, laughing together with friends while eating a pastry, sunbeams streaming through a large cafe glass window with green plants on shelves, bright and lively pastel tones, cheerful and normal facial expressions, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "몸은 소파에 누워 있지만, 뇌는 계속 회의를 하고 있는 겁니다. 그러니 쉬어도 피곤할 수밖에 없습니다. 그런데 더 놀라운 사실이 있습니다. 많은 사람들은 유튜브를 보고,",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a man lying flat on a living room sofa, but a translucent glowing silhouette of his body is sitting up at a corporate conference table, arguing aggressively with ghostly businessmen, stressful and split-reality atmosphere with contrasting cozy orange room light and harsh neon office blue light, exhausted physical body versus frantic mental activity, detailed living room background with a television and carpet, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 11,
-    "script_text": "근데 그러다가 갑자기. 산책길에서 비슷한 강아지를 봤는데. 아니면 그냥 강아지 사료 광고가 유튜브에 떴는데.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of the person walking down a lively neighborhood street under late afternoon golden hour sunlight, suddenly freezing in place while looking across the street at another person walking a fluffy golden dog on a leash, local neighborhood shops and electric poles in the background, vivid orange and contrasting deep shadows, sudden wave of grief with tear marks and wide eyes, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "드라마를 보고, 쇼츠를 넘기며 쉬고 있다고 생각합니다. 하지만 뇌 입장에서는 그것도 휴식이 아닐 수 있습니다. 영상 하나가 끝나면 또 다른 영상이 시작되고, 계속 새로운 정보가 들어오고, 뇌는 끊임없이 판단하고 반응합니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a person scrolling rapidly through colorful video thumbnails on a tablet screen, a barrage of neon-colored pop-ups, bright media icons, and algorithmic recommendations flying out of the screen, overstimulated and frantic atmosphere with vivid pink, cyan, and yellow hues, wide unblinking eyes reflecting the intense screen glow, cozy bedroom background blurred slightly by motion effects but fully drawn with pillows and a desk lamp, bold outlines, flat color fill, cel-shading, screen tone, speed lines, sparkles, no photorealism, no lens effects, no watermarks"
   },
   {
     "image_number": 12,
-    "script_text": "그 순간 눈물이 나요. 아무 예고도 없이. 그러면서 이런 생각이 들기 시작해요.",
-    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of the person sitting at a desk at night, holding a glowing smartphone that displays an online video thumbnail of a cute dog, the room is completely dark except for the screen light illuminating their face, deep blue tones with strong white screen glow highlights, hot tears streaming down the cheeks with intense sorrow and shock emotion marks, bold outlines, flat color fill, screen tone, no watermarks"
+    "script_text": "재미있는 영상이라도 마찬가지입니다. 몸은 가만히 있지만, 뇌는 계속 일을 하고 있습니다. 그래서 몇 시간 동안 영상을 봤는데도 개운하지 않은 겁니다. 오히려 더 멍하고, 더 지치고, 더 무기력해지는 경우도 있습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a man sitting cross-legged on a rug in front of a large television screen, holding a remote control with a completely blank and drained expression, empty pizza box and soda cans scattered on the floor, dazed and depleted atmosphere with dull grey and washed-out blue tones, slumped shoulders and glassy eyes, detailed living room setting with a media console and window showing a dim evening landscape, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 13,
+    "script_text": "직장인 박 과장도 그랬습니다. 10년 넘게 회사 생활을 하며 누구보다 성실하게 살아온 사람입니다. 주말만 되면 다짐했습니다. \"이번 주말엔 진짜 쉬어야지.\"",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a neat and professional office worker, Park, dressed in a business casual outfit, sitting at a tidy office desk and organizing documents with a dedicated look, colleague in the background working at a computer, diligent and structured atmosphere with bright professional office lighting, focused and serious expression, fully detailed office space with rows of desks, plants, and motivational posters, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 14,
+    "script_text": "그런데 막상 주말이 되면 하루 종일 유튜브를 보고, 드라마를 보고, 소파에 누워 시간을 보냈습니다. 분명 아무것도 하지 않았는데 일요일 밤이면 늘 지쳐 있었습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of Park lying face down on a soft sofa on a sunny Saturday morning, a smartphone lying active next to his hand on the floor showing endless short-form video feeds, pillows piled up awkwardly, lazy and unproductive atmosphere with warm morning sunlight casting shadows across the room, completely limp body language, detailed apartment living room background with a bookshelf and a curtained window, bold outlines, flat color fill, cel-shading, screen tone, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 15,
+    "script_text": "스마트폰 때문인가 싶어 사용 시간을 줄여봤습니다. 하지만 결과는 똑같았습니다. 문제는 스마트폰이 아니었습니다. 문제는 머릿속이었습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of Park putting his smartphone face down on a wooden dining table with a determined but weary expression, a glass of water and a closed notebook on the table, lingering anxiety with faint shadow lines around his head, conflicted and tense atmosphere with cool green and soft amber tones, hand firmly resting on the phone, detailed dining room background with a hanging light fixture and a wall calendar, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 16,
+    "script_text": "그는 쉬는 내내 월요일 회의를 걱정했고, 보고서를 떠올렸고, 인간관계를 곱씹고 있었습니다. 몸은 쉬고 있었지만 마음은 계속 야근 중이었던 겁니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of Park sitting on a park bench on a pleasant afternoon, but his mind is visibly plagued by floating transparent graphics of financial charts, complex presentation slides, and angry supervisor faces swirling around his head, ironic and stressful atmosphere with bright outdoor green tones contrasting with dark mental thoughts, clutching his head with a distressed expression, fully detailed park background with trees, a walking path, and distant buildings, bold outlines, flat color fill, cel-shading, screen tone, sweat drops, motion lines, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 17,
+    "script_text": "사실 많은 직장인들이 비슷합니다. 우리를 지치게 만드는 것은 업무량 자체가 아닐 수도 있습니다. 멈추지 못하는 생각. 정리되지 않은 걱정.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a busy urban sidewalk during rush hour, a crowd of fatigued office workers walking with slumped shoulders under a grey sky, carrying briefcases and staring anxiously ahead, overwhelming and exhausting atmosphere with heavy monochromatic grey and blue tones, expressions of deep fatigue and stress, detailed street scene with tall glass buildings, traffic lights, and crosswalks, bold outlines, flat color fill, cel-shading, screen tone, speed lines, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 18,
+    "script_text": "끝없이 이어지는 마음의 소음. 그것이 에너지를 빼앗고 있는지도 모릅니다. 그렇다면 뇌를 진짜 쉬게 하려면 어떻게 해야 할까요?",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a person standing at a high-rise office window looking out at a chaotic city storm, glowing abstract energy currents of anxiety draining out from their chest into the air, heavy and exhausting mood with dark stormy blues and sharp neon orange accents, tense hands gripping the window frame, fully detailed office interior with a desk, office chair, and computer monitor in the background, bold outlines, flat color fill, cel-shading, screen tone, motion lines, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 19,
+    "script_text": "생각보다 어렵지 않습니다. 첫 번째는 손을 쓰는 단순 반복 활동입니다. 천천히 걷기. 설거지하기. 빨래 개기.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a person walking peacefully down a quiet, sun-drenched neighborhood alleyway lined with trees, wearing casual clothes and a relaxed expression, soft dappled sunlight filtering through green leaves onto the pavement, serene and calming atmosphere with warm golden and fresh green tones, easy and slow walking posture, detailed residential background with small houses and parked bicycles, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 20,
+    "script_text": "화분에 물 주기. 중요한 것은 생산성이 아닙니다. 생각이 잠시 쉬어갈 수 있는 단순함입니다. 예를 들어 설거지를 한다면, 그릇에 닿는 따뜻한 물의 감각, 거품이 생기는 모습,",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a person standing at a kitchen sink, washing dishes with a calm and focused expression, warm soapy water running over a white ceramic plate, tiny soap bubbles floating in the air, peaceful and grounding atmosphere with soft pastel pink and mint green tones, gentle hand movements with a soft smile, highly detailed kitchen background with a dish rack, tiles, and a small potted herb on the windowsill, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 21,
+    "script_text": "손끝의 느낌에 집중해 보세요. 뇌는 현재의 감각에 집중할 때 과거와 미래를 오가던 걱정 회로를 자연스럽게 줄이게 됩니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, close-up focused shot of a person's hands gently drying a clean glass with a soft linen towel, warm sunlight illuminating the water droplets and the texture of the cloth, peaceful and meditative atmosphere with warm cream and soft beige tones, mindful and slow hand gestures, detailed kitchen counter background with a wooden cutting board and a ceramic mug, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 22,
+    "script_text": "두 번째는 하루 10분의 무자극 시간입니다. 스마트폰도 내려놓고, TV도 끄고, 유튜브도 닫아두세요.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a calm living room during a quiet afternoon, a person sitting peacefully in an armchair with a completely clear space around them, a smartphone placed far away on a distant shelf, silent and tranquil atmosphere with soft lavender and warm cream tones, relaxed sitting posture with hands resting gently on the lap, detailed room background with a bookshelf, a large window letting in soft light, and a tidy rug, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 23,
+    "script_text": "그리고 그냥 창밖을 바라보세요. 따뜻한 차를 한 잔 마셔도 좋습니다. 처음에는 불편할 수 있습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a person sitting by a large living room window, looking outside at a clear blue sky with fluffy white clouds, holding a warm ceramic mug with both hands, steam rising gently from the mug, peaceful and spacious atmosphere with gentle blue and pastel yellow tones, calm and serene facial expression, detailed interior with a wooden floor, a soft curtain blowing in the breeze, and an indoor plant, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 24,
+    "script_text": "심심하고, 뭔가 놓치고 있는 느낌이 들 수도 있습니다. 하지만 바로 그 불편함이 중요합니다. 그동안 우리의 뇌가 얼마나 많은 자극 속에서 살아왔는지 보여주는 신호이기 때문입니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a person sitting at a desk looking slightly restless, fidgeting with a pen while looking at a completely clear desk with no digital devices, small question mark emotion marks near their head, slightly awkward but curious atmosphere with pale turquoise and soft coral tones, hesitant posture, detailed room background with an empty notice board and a window showing a quiet afternoon street, bold outlines, flat color fill, cel-shading, screen tone, emotion marks, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 25,
+    "script_text": "일주일 정도만 해보세요. 어느 순간부터 그 시간이 기다려지기 시작합니다. 그리고 오랜만에 머리가 맑아지는 경험을 하게 됩니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a person standing on a bright balcony on a sunny morning, breathing in fresh air with an incredibly clear and refreshed expression, sparkling light energy swirling gently around their head symbolizing clarity, bright and revitalizing atmosphere with vibrant sky blue and sunny yellow tones, open and relaxed body language with a wide smile, detailed balcony background with potted flowers and a distant city view under a clear sky, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 26,
+    "script_text": "우리는 늘 피곤함의 원인을 업무량에서 찾습니다. 그래서 더 긴 휴가를 원하고, 더 많은 쉼을 원합니다. 하지만 때로는 더 많은 휴식보다 더 중요한 것이 있습니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a stressed executive sitting under a mountain of files and clocks in a frantic corporate office, looking longing at a large travel poster of a tropical beach on the wall, chaotic versus wishful atmosphere with stressful office dark blues and a bright tropical orange poster highlight, tense and desperate posture, detailed office setting with computers, paperwork, and white fluorescent lights, bold outlines, flat color fill, cel-shading, screen tone, speed lines, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 27,
+    "script_text": "바로 제대로 쉬는 방법입니다. 어쩌면 여러분에게 필요한 것은 며칠간의 휴가가 아니라, 단 10분의 진짜 휴식일지도 모릅니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, medium-wide shot of a person sitting peacefully in a quiet room, taking a deep, mindful breath with eyes closed, a small glowing orb of light resting in their hands representing a genuine 10-minute break, deeply calm and grounded atmosphere with soothing deep indigo and warm gold tones, perfectly relaxed and still posture, fully detailed room environment with a minimalist wooden table, a single ceramic vase, and soft lamplight, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 28,
+    "script_text": "오늘 저녁, 스마트폰을 잠시 내려놓고 창밖을 바라보며 10분만 보내보세요. 그 10분이 여러분의 하루를,",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a cozy living room during a warm evening, a person sitting by a wide open window, looking up at a beautiful starry night sky, a smartphone resting face down on a coffee table far behind them, deeply inspiring and peaceful atmosphere with rich midnight blue and warm amber tones, serene expression with a gentle smile, completely detailed interior with a soft couch, a glowing floor lamp, and framed artwork on the wall, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 29,
+    "script_text": "그리고 한 주를 바꿀 수도 있습니다. 오늘 영상이 도움이 되셨다면 구독과 좋아요 부탁드립니다.",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a modern, bright office space on a energetic Monday morning, the same professional worker from before walking in with a confident stride and a vibrant, energetic expression, holding a coffee mug, coworkers greeting each other warmly in the background, productive and refreshed atmosphere with bright morning sunlight and cheerful pastel colors, upright and dynamic posture, detailed office background with computers, glass panels, and green office plants, bold outlines, flat color fill, cel-shading, screen tone, sparkles, no photorealism, no lens effects, no watermarks"
+  },
+  {
+    "image_number": 30,
+    "script_text": "감사합니다",
+    "prompt": "2D illustration style, clean line art, vibrant colors, cel shaded, digital art, wide shot of a cheerful narrator standing in a beautifully lit, cozy studio room, bowing politely with a warm, grateful smile, a stylized graphic icon of a YouTube 'Subscribe' and 'Like' button floating elegantly beside them with decorative sparkles, bright and thankful atmosphere with warm golden, coral, and soft teal tones, welcoming and polite body language, fully detailed background with a wooden desk, a bookshelf, and a window showing a peaceful evening twilight, bold outlines, flat color fill, cel-shading, screen tone, sparkles, emotion marks, no photorealism, no lens effects, no watermarks"
   }
 ]

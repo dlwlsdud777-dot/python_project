@@ -1,9 +1,11 @@
+# from operator import index
+from random import random
 import subprocess
 import re
 import json
 from playwright.sync_api import sync_playwright
 
-SAVE_DIR = r"C:\Users\210830\Downloads\한걸음더"
+SAVE_DIR = r"C:\Users\balle\Documents\유튜브\이미지 생성 작업"
 
 def load_prompts(json_path):
     with open(json_path, "r", encoding="utf-8") as f:
@@ -47,9 +49,12 @@ def run_flow(prompts):
             print(f"\n[{image_number}/{total}] 시작!")
 
             # 첫 번째만 새 프로젝트 생성
-            if index == 0:
-                page.get_by_role("button", name="새 프로젝트").click()
-                print("새 프로젝트 클릭 완료!")
+            if index % 10 == 0:
+                if index > 0:  # 첫 번째는 이미 새 프로젝트 상태
+                    page.go_back()  # 뒤로가기
+                    page.wait_for_timeout(2000)
+                page.get_by_role("button", name="add_2 새 프로젝트").click()
+                print(f"새 프로젝트 클릭 완료! ({index+1}번째)")
                 page.wait_for_timeout(3000)
 
             # 에셋 추가
@@ -57,6 +62,7 @@ def run_flow(prompts):
             page.get_by_role("button", name=re.compile(r"arrow_drop_down")).first.click()
             page.get_by_role("menuitem", name="샘플이미지").click()
             page.get_by_test_id("virtuoso-item-list").get_by_role("img", name="적용1.png").click()
+
             print("에셋 추가 완료!")
 
             # 프롬프트 입력
@@ -65,11 +71,15 @@ def run_flow(prompts):
             print("프롬프트 입력 완료!")
 
             # 이미지 갯수 1 클릭
-            if index == 0:
-                page.get_by_role("button", name="🍌 Nano Banana 2 crop_16_9 x2").click()
-                page.get_by_role("tab", name="1x").click()
-                page.get_by_role("tab", name="1x").press("Escape")
-
+            if index % 10 == 0:
+                page.wait_for_timeout(2000)
+                button = page.get_by_role("button", name="🍌 Nano Banana 2 crop_16_9 x2")
+                if button.is_visible():
+                    button.click()
+                    page.wait_for_timeout(1000)
+                    page.get_by_role("tab", name="1x").click()
+                    page.get_by_role("tab", name="1x").press("Escape")
+                    
             # 만들기 버튼 클릭
             page.get_by_role("button", name="arrow_forward 만들기").click()
                         
@@ -79,7 +89,7 @@ def run_flow(prompts):
                 page.wait_for_timeout(30000)
 
             # 현재 이미지 개수 기억
-            expected_count = index + 1
+            expected_count = (index % 10) + 1
 
             # 새 이미지 생성 완료 대기
             page.wait_for_function(
