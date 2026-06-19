@@ -59,7 +59,7 @@ def srt_time_to_seconds(time_str):
     h, m, s = time_str.split(":")
     return int(h) * 3600 + int(m) * 60 + float(s)
 
-# 해당함수는 이해가 안됨
+
 def match_json_to_srt(json_data, subtitles):
     """
     JSON의 script_text와 SRT 자막을 매칭해서
