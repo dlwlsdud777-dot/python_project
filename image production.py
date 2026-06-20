@@ -13,7 +13,7 @@ def load_prompts(json_path):
 
 def refresh_session():
     print("세션 만료! 재로그인 필요...")
-    subprocess.run(["python", "session.py"])
+    subprocess.run(["python", "flow_session.py"])
     print("세션 갱신 완료! 다시 실행해주세요.")
 
 def human_delay(page, min_ms=500, max_ms=2000):
@@ -28,7 +28,7 @@ def run_flow(prompts):
         )
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
-            storage_state="session.json"
+            storage_state="flow_session.json"
         )
         page = context.new_page()
         page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")

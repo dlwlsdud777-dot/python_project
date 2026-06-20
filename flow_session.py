@@ -16,6 +16,6 @@ with sync_playwright() as p:
     print("Google 로그인 완료 후 Enter 누르세요...")
     input()
     
-    context.storage_state(path="session.json")
+    context.storage_state(path="flow_session.json")
     print("세션 저장 완료!")
     browser.close()

@@ -17,9 +17,15 @@ from moviepy import VideoFileClip, AudioFileClip, ImageClip, CompositeVideoClip,
 # 설정 (경로를 본인 환경에 맞게 수정하세요)
 # =============================================
 BASE_DIR = r"C:\Users\210830\Documents\coding\youtube_automation"
+<<<<<<< HEAD
 SRT_FILE = os.path.join(BASE_DIR, "20260531_강아지가_떠난_날_.srt")
 JSON_FILE = os.path.join(BASE_DIR, "gemini-code-1780191119015.json")
 AUDIO_FILE = os.path.join(BASE_DIR, "20260531_강아지가_떠난_날_.mp3")
+=======
+SRT_FILE = os.path.join(BASE_DIR, "자막.srt")
+JSON_FILE = os.path.join(BASE_DIR, "prompts.json")
+AUDIO_FILE = os.path.join(BASE_DIR, "음성.mp3")
+>>>>>>> 7902a5e7dd90919c96f2c389d5df88ab7b95fb33
 VIDEOS_DIR = BASE_DIR
 OUTPUT_FILE = os.path.join(BASE_DIR, "output_final.mp4")
 
@@ -85,8 +91,14 @@ def match_json_to_srt(json_data, subtitles):
             end_time = subtitles[srt_index]["end"]
             srt_index += 1
 
+<<<<<<< HEAD
             coverage = sum(1 for t in script_tokens if t in matched_text) / len(script_tokens)
             if coverage >= 0.80:
+=======
+            last_token = script_tokens[-1]
+            coverage = sum(1 for t in script_tokens if t in matched_text) / len(script_tokens)
+            if last_token in matched_text and coverage >= 0.80:
+>>>>>>> 7902a5e7dd90919c96f2c389d5df88ab7b95fb33
                 break
 
         result.append({
@@ -144,6 +156,12 @@ def make_segment(video_path, target_duration, subtitles_in_range, video_size):
     clip = VideoFileClip(video_path)
     clip_duration = clip.duration
 
+<<<<<<< HEAD
+=======
+    if tuple(clip.size) != tuple(video_size):
+        clip = clip.resized(video_size)
+
+>>>>>>> 7902a5e7dd90919c96f2c389d5df88ab7b95fb33
     # 목표 길이만큼 반복해서 이어붙이기
     loops_needed = int(target_duration / clip_duration) + 1
     repeated_clips = [clip] * loops_needed
@@ -209,9 +227,16 @@ def main():
     print("\n[4단계] 세그먼트 영상 생성 중...")
     segment_clips = []
 
+<<<<<<< HEAD
     first_video = VideoFileClip(os.path.join(VIDEOS_DIR, "1.mp4"))
     video_size = first_video.size
     first_video.close()
+=======
+    # first_video = VideoFileClip(os.path.join(VIDEOS_DIR, "1.mp4"))
+    # video_size = first_video.size
+    # first_video.close()
+    video_size = (1472, 800)
+>>>>>>> 7902a5e7dd90919c96f2c389d5df88ab7b95fb33
     print(f"  → 영상 크기: {video_size[0]}x{video_size[1]}")
 
     for seg in segments_info:
