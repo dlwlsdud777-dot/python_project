@@ -4,7 +4,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 # IMAGE_DIR = Path(r"C:\Users\balle\Documents\coding\python_project\유튜브 작업중")
-IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 작업중")
+IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 자동화\작업중")
 VIDEO_DIR = IMAGE_DIR / "영상제작"
 VIDEO_DIR.mkdir(exist_ok=True)
 
