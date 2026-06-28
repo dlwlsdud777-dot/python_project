@@ -3,8 +3,8 @@ import subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-# IMAGE_DIR = Path(r"C:\Users\balle\Documents\coding\python_project\유튜브 작업중")
-IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 자동화\작업중")
+IMAGE_DIR = Path(r"C:\Users\balle\Documents\coding\python_project\유튜브 자동화\작업중")
+# IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 자동화\작업중")
 VIDEO_DIR = IMAGE_DIR / "영상제작"
 VIDEO_DIR.mkdir(exist_ok=True)
 
@@ -66,8 +66,8 @@ def run_grok_video():
 
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
-            user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
-            # user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
+            # user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
+            user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
             headless=False,
             args=["--disable-blink-features=AutomationControlled"],
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
@@ -146,10 +146,12 @@ def run_grok_video():
 
             # 다운로드
             save_path = VIDEO_DIR / f"{image_number:02d}.mp4"
+            # with page.expect_download() as download_info:
+            #     page.locator(
+            #         "[aria-label='다운로드']:not([disabled]), [aria-label='Download']:not([disabled])"
+            #     ).first.click()
             with page.expect_download() as download_info:
-                page.locator(
-                    "[aria-label='다운로드']:not([disabled]), [aria-label='Download']:not([disabled])"
-                ).first.click()
+                page.get_by_role("button", name="다운로드").click()
             download = download_info.value
             download.save_as(save_path)
             print(f"[{image_number}/{total}] 저장 완료! → {save_path}")
