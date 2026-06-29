@@ -13,8 +13,8 @@ def accept_cookie_popup(page):
 def save_session():
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
-            # user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
-            user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
+            user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
+            # user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
             headless=False,
             args=["--disable-blink-features=AutomationControlled"],
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
