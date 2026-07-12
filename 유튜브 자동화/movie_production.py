@@ -3,8 +3,8 @@ import subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-# IMAGE_DIR = Path(r"C:\Users\balle\Documents\coding\python_project\유튜브 자동화\작업중")
-IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 자동화\작업중")
+IMAGE_DIR = Path(r"C:\Users\balle\Documents\coding\python_project\유튜브 자동화\작업중")
+# IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 자동화\작업중")
 VIDEO_DIR = IMAGE_DIR / "영상제작"
 VIDEO_DIR.mkdir(exist_ok=True)
 
@@ -66,8 +66,8 @@ def run_grok_video():
 
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
-            user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
-            # user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
+            # user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
+            user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
             headless=False,
             args=["--disable-blink-features=AutomationControlled"],
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
@@ -87,7 +87,7 @@ def run_grok_video():
         page.get_by_role("radio", name="비디오").click()
         human_delay(page, 500, 1000)
 
-        page.get_by_role("radio", name="480p").click()
+        page.get_by_role("radio", name="720p").click()
         human_delay(page, 300, 700)
 
         page.get_by_role("radio", name="6s").click()
@@ -119,22 +119,71 @@ def run_grok_video():
             page.get_by_role("button", name="제출").click()
             print(f"[{image_number}/{total}] 생성 요청 완료! 대기 중...")
 
-            # ✅ 피드백 팝업이 뜰 수 있으므로 주기적으로 체크하며 대기, 재생 중 영상만 확인
+
+
+            # ✅ 피드백 팝업이 뜰 수 있으므로 주기적으로 체크하며 대기, 재생 중 + 다운로드 버튼 노출 확인
+            # for _ in range(120):  # 최대 10분 (5초 * 120)
+            #     skip_feedback_popup(page)  # 팝업 체크
+            #     try:
+            #         # ✅ video 태그가 실제 재생 중인지 확인
+            #         is_playing = page.evaluate("""
+            #             () => {
+            #                 const video = document.querySelector('video');
+            #                 return video && !video.paused && video.currentTime > 0;
+            #             }
+            #         """)
+
+            #         # ✅ 다운로드 버튼이 실제로 활성화되어 보이는지 확인
+            #         download_btn = page.get_by_role("button", name="다운로드")
+            #         btn_ready = download_btn.is_visible() and download_btn.is_enabled()
+
+            #         if is_playing and btn_ready:
+            #             print(f"[{image_number}/{total}] 영상 생성 완료! (재생 + 다운로드 버튼 확인)")
+            #             break
+            #     except:
+            #         pass
+            #     page.wait_for_timeout(5000)
+            # else:
+            #     print(f"[{image_number}/{total}] ❌ 타임아웃 - 다음으로 넘어갑니다")
+            #     page.go_back()
+            #     page.wait_for_timeout(5000)
+            #     continue
+
+            # human_delay(page, 1000, 2000)
             for _ in range(120):  # 최대 10분 (5초 * 120)
                 skip_feedback_popup(page)  # 팝업 체크
                 try:
-                    # ✅ video 태그가 실제 재생 중인지 확인
+                    filmstrip_btn = page.locator('[data-filmstrip-item="true"]').first
+
+                    # ✅ 진행률 오버레이(퍼센트 텍스트)가 아직 남아있는지 확인
+                    progress_overlay = filmstrip_btn.locator("div.absolute.inset-0")
+                    still_processing = progress_overlay.count() > 0 and progress_overlay.is_visible()
+
+                    if still_processing:
+                        progress_text = progress_overlay.inner_text().strip()
+                        print(f"  ...생성 중 ({progress_text})")
+                        page.wait_for_timeout(5000)
+                        continue
+
+                    # ✅ 진행률 오버레이가 사라졌으면 썸네일 클릭해서 재생 트리거
+                    filmstrip_btn.click()
+                    human_delay(page, 800, 1500)
+
+                    # ✅ video 재생 + 다운로드 버튼 확인
                     is_playing = page.evaluate("""
                         () => {
                             const video = document.querySelector('video');
                             return video && !video.paused && video.currentTime > 0;
                         }
                     """)
-                    if is_playing:
-                        print(f"[{image_number}/{total}] 영상 생성 완료!")
+                    download_btn = page.get_by_role("button", name="다운로드")
+                    btn_ready = download_btn.is_visible() and download_btn.is_enabled()
+
+                    if is_playing and btn_ready:
+                        print(f"[{image_number}/{total}] 영상 생성 완료! (재생 + 다운로드 버튼 확인)")
                         break
-                except:
-                    pass
+                except Exception as e:
+                    print(f"  체크 중 오류(무시): {e}")
                 page.wait_for_timeout(5000)
             else:
                 print(f"[{image_number}/{total}] ❌ 타임아웃 - 다음으로 넘어갑니다")
@@ -143,13 +192,10 @@ def run_grok_video():
                 continue
 
             human_delay(page, 1000, 2000)
+            
 
             # 다운로드
             save_path = VIDEO_DIR / f"{image_number:02d}.mp4"
-            # with page.expect_download() as download_info:
-            #     page.locator(
-            #         "[aria-label='다운로드']:not([disabled]), [aria-label='Download']:not([disabled])"
-            #     ).first.click()
             with page.expect_download() as download_info:
                 page.get_by_role("button", name="다운로드").click()
             download = download_info.value
