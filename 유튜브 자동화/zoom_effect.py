@@ -38,20 +38,20 @@ def create_target_zoom_video_cpu():
     fps = 30           # 초당 프레임 수
     zoom_rate = 0.08   # 5초 동안 총 8% 확대 (느리고 자연스러운 줌 효과)
  
-    # 2. '19'로 시작하는 이미지 파일 찾기
+    # 2. '12'로 시작하는 이미지 파일 찾기
     valid_extensions = ('.png', '.jpg', '.jpeg', '.webp')
     target_file = None
     for file in os.listdir(working_dir):
-        if file.lower().startswith('19') and file.lower().endswith(valid_extensions):
+        if file.lower().startswith('12') and file.lower().endswith(valid_extensions):
             target_file = file
             break
  
     if not target_file:
-        print(f"오류: '{working_dir}' 폴더에서 '19'로 시작하는 이미지 파일을 찾을 수 없습니다.")
+        print(f"오류: '{working_dir}' 폴더에서 '12'로 시작하는 이미지 파일을 찾을 수 없습니다.")
         return
  
     image_path = os.path.join(working_dir, target_file)
-    output_mp4_path = os.path.join(working_dir, "19_zoom_output.mp4")
+    output_mp4_path = os.path.join(working_dir, "12_zoom_output.mp4")
  
     # 3. 이미지 로드 및 프레임 생성 준비
     img = imread_unicode(image_path)
@@ -63,7 +63,7 @@ def create_target_zoom_video_cpu():
     total_frames = duration * fps
  
     # 작업 중 폴더 내에 임시 프레임 저장용 폴더 생성
-    temp_dir = os.path.join(working_dir, "temp_frames_19")
+    temp_dir = os.path.join(working_dir, "temp_frames_12")
     os.makedirs(temp_dir, exist_ok=True)
  
     print(f"대상 파일 찾음: {target_file}")

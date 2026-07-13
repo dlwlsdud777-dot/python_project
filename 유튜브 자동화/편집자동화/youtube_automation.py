@@ -12,6 +12,9 @@ import os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from moviepy import VideoFileClip, AudioFileClip, ImageClip, CompositeVideoClip, concatenate_videoclips
+from moviepy import VideoFileClip, AudioFileClip, ImageClip, CompositeVideoClip, CompositeAudioClip, concatenate_videoclips
+from moviepy.audio.fx import AudioLoop, MultiplyVolume
+
 
 # =============================================
 # 설정 (경로를 본인 환경에 맞게 수정하세요)
@@ -22,6 +25,8 @@ JSON_FILE = os.path.join(BASE_DIR, "prompts.json")
 AUDIO_FILE = os.path.join(BASE_DIR, "음성.mp3")
 VIDEOS_DIR = BASE_DIR
 OUTPUT_FILE = os.path.join(BASE_DIR, "output_final.mp4")
+BGM_FILE = os.path.join(BASE_DIR, "배경음악.mp3")
+BGM_VOLUME = 0.15   # 배경음악 볼륨 (0.0~1.0). 잔잔하게 깔리도록 낮게 설정. 필요시 0.1~0.2 사이로 조절
 
 FONT_PATH = "C:/Windows/Fonts/malgunbd.ttf"  # 한국어 폰트 (맑은 고딕 Bold)
 FONT_SIZE = 40                                # 자막 글씨 크기
@@ -241,15 +246,42 @@ def main():
     print("\n[5단계] 전체 영상 이어붙이는 중...")
     final_video = concatenate_videoclips(segment_clips)
 
-    # 6. 음성 파일 합치기
-    print("\n[6단계] 음성 파일 합치는 중...")
+    # # 6. 음성 파일 합치기
+    # print("\n[6단계] 음성 파일 합치는 중...")
+    # if os.path.exists(AUDIO_FILE):
+    #     audio = AudioFileClip(AUDIO_FILE)
+    #     audio = audio.subclipped(0, min(audio.duration, final_video.duration))
+    #     final_video = final_video.with_audio(audio)
+    #     print(f"  → 음성 파일 적용 완료 ({audio.duration:.2f}초)")
+    # else:
+    #     print(f"  ⚠️  음성 파일 없음: {AUDIO_FILE}")
+
+    # 6. 음성 + 배경음악 합치기
+    print("\n[6단계] 오디오 합치는 중...")
+    audio_tracks = []
+
     if os.path.exists(AUDIO_FILE):
-        audio = AudioFileClip(AUDIO_FILE)
-        audio = audio.subclipped(0, min(audio.duration, final_video.duration))
-        final_video = final_video.with_audio(audio)
-        print(f"  → 음성 파일 적용 완료 ({audio.duration:.2f}초)")
+        voice = AudioFileClip(AUDIO_FILE)
+        voice = voice.subclipped(0, min(voice.duration, final_video.duration))
+        audio_tracks.append(voice)
+        print(f"  → 음성 파일 적용 완료 ({voice.duration:.2f}초)")
     else:
         print(f"  ⚠️  음성 파일 없음: {AUDIO_FILE}")
+
+    if os.path.exists(BGM_FILE):
+        bgm = AudioFileClip(BGM_FILE)
+        bgm = bgm.with_effects([
+            AudioLoop(duration=final_video.duration),   # 영상 길이에 맞춰 자동 반복
+            MultiplyVolume(BGM_VOLUME)                    # 볼륨 낮춰서 잔잔하게
+        ])
+        audio_tracks.append(bgm)
+        print(f"  → 배경음악 적용 완료 (볼륨 {BGM_VOLUME}, {final_video.duration:.2f}초로 반복)")
+    else:
+        print(f"  ⚠️  배경음악 파일 없음: {BGM_FILE}")
+
+    if audio_tracks:
+        combined_audio = CompositeAudioClip(audio_tracks)
+        final_video = final_video.with_audio(combined_audio)
 
     # 7. 최종 저장
     print(f"\n[7단계] 최종 영상 저장 중...")
