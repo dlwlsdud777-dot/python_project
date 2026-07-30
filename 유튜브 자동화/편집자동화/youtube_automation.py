@@ -11,7 +11,6 @@ import re
 import os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-from moviepy import VideoFileClip, AudioFileClip, ImageClip, CompositeVideoClip, concatenate_videoclips
 from moviepy import VideoFileClip, AudioFileClip, ImageClip, CompositeVideoClip, CompositeAudioClip, concatenate_videoclips
 from moviepy.audio.fx import AudioLoop, MultiplyVolume
 

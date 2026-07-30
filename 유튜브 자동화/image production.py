@@ -119,25 +119,62 @@ def run_flow(prompts, total):
             expected_count = (index % 10) + 1
 
             # 새 이미지 생성 완료 대기
+            # page.wait_for_function(
+            #     f"document.querySelectorAll('img[alt=\"생성된 이미지\"]').length >= {expected_count}",
+            #     timeout=600000
+            # )
+            # print(f"[{image_number}/{total}] 이미지 생성 완료!")
+            # human_delay(page, 2000, 4000)
+
+             # 새 이미지 생성 완료 대기 (참조이미지 적용1.png는 카운트에서 제외)
             page.wait_for_function(
-                f"document.querySelectorAll('img[alt=\"생성된 이미지\"]').length >= {expected_count}",
+                f"""
+                () => {{
+                    const imgs = document.querySelectorAll('img[alt="생성된 이미지"]');
+                    let cnt = 0;
+                    imgs.forEach(img => {{
+                        const tile = img.closest('div[data-tile-id]');
+                        if (tile && !tile.textContent.includes('적용1.png')) cnt++;
+                    }});
+                    return cnt >= {expected_count};
+                }}
+                """,
                 timeout=600000
             )
-            print(f"[{image_number}/{total}] 이미지 생성 완료!")
-            human_delay(page, 2000, 4000)
+            print(f"[{image_number}/{total}] 이미지 생성 완료!")           
 
-            # 우클릭 → 다운로드, 가장 최근 이미지 = nth(0) 정상작동시 삭제
+            # 우클릭 → 다운로드, 가장 최근 이미지 = nth(0)
             # image = page.locator("img[alt='생성된 이미지']").nth(0)
             # image.click(button="right")
             # page.wait_for_timeout(1500)
-            # page.get_by_role("menuitem", name="다운로드").hover()
-            # page.wait_for_timeout(1000)
+
+            # download_menu = page.get_by_role("menuitem", name="다운로드")
+            # download_menu.hover()
+            # page.wait_for_timeout(1500)
+
+            # submenu = page.get_by_role("menuitem", name="1K 원본 크기")
+            # submenu.wait_for(state="visible", timeout=10000)  # ✅ 보일 때까지 대기
             # with page.expect_download() as download_info:
-            #     page.get_by_role("menuitem", name="1K 원본 크기").click()
+            #     submenu.click()
             # download = download_info.value
 
-            # 우클릭 → 다운로드, 가장 최근 이미지 = nth(0)
-            image = page.locator("img[alt='생성된 이미지']").nth(0)
+            # 우클릭 → 다운로드, 참조이미지(적용1.png) 제외하고 선택
+            all_images = page.locator("img[alt='생성된 이미지']")
+            count = all_images.count()
+
+            image = None
+            for i in range(count):
+                img = all_images.nth(i)
+                tile = img.locator("xpath=ancestor::div[@data-tile-id][1]")
+                tile_text = tile.evaluate("el => el.textContent")
+
+                if "적용1.png" not in tile_text:
+                    image = img
+                    break
+
+            if image is None:
+                raise Exception(f"[{image_number}/{total}] 생성된 이미지를 찾지 못했습니다 (참조 이미지만 감지됨)")
+
             image.click(button="right")
             page.wait_for_timeout(1500)
 
@@ -146,7 +183,7 @@ def run_flow(prompts, total):
             page.wait_for_timeout(1500)
 
             submenu = page.get_by_role("menuitem", name="1K 원본 크기")
-            submenu.wait_for(state="visible", timeout=10000)  # ✅ 보일 때까지 대기
+            submenu.wait_for(state="visible", timeout=10000)
             with page.expect_download() as download_info:
                 submenu.click()
             download = download_info.value
@@ -162,9 +199,20 @@ def run_flow(prompts, total):
 all_prompts = load_prompts(rf"{SAVE_DIR}\prompts.json")
 total = len(all_prompts)  # ✅ 전체 개수 먼저 저장
 
+# prompts = [
+#     item for item in all_prompts
+#     if not Path(rf"{SAVE_DIR}\{item['image_number']:02d}.png").exists()
+# ]
+
+def image_exists(image_number):
+    for ext in ["png", "jpg", "jpeg"]:
+        if Path(rf"{SAVE_DIR}\{image_number:02d}.{ext}").exists():
+            return True
+    return False
+
 prompts = [
     item for item in all_prompts
-    if not Path(rf"{SAVE_DIR}\{item['image_number']:02d}.png").exists()
+    if not image_exists(item['image_number'])
 ]
 
 print(f"남은 작업: {len(prompts)}개 / 전체: {total}개")

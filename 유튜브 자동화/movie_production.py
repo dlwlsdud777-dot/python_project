@@ -3,8 +3,8 @@ import subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-IMAGE_DIR = Path(r"C:\Users\balle\Documents\coding\python_project\유튜브 자동화\작업중")
-# IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 자동화\작업중")
+# IMAGE_DIR = Path(r"C:\Users\balle\Documents\coding\python_project\유튜브 자동화\작업중")
+IMAGE_DIR = Path(r"C:\Users\210830\Documents\coding\유튜브 자동화\작업중")
 VIDEO_DIR = IMAGE_DIR / "영상제작"
 VIDEO_DIR.mkdir(exist_ok=True)
 
@@ -66,9 +66,10 @@ def run_grok_video():
 
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
-            # user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
-            user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
+            user_data_dir=r"C:\Users\210830\AppData\Local\Playwright\grok_profile",
+            # user_data_dir=r"C:\Users\balle\AppData\Local\Playwright\grok_profile",
             headless=False,
+            accept_downloads=True,
             args=["--disable-blink-features=AutomationControlled"],
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36"
         )
@@ -153,7 +154,21 @@ def run_grok_video():
             for _ in range(120):  # 최대 10분 (5초 * 120)
                 skip_feedback_popup(page)  # 팝업 체크
                 try:
-                    filmstrip_btn = page.locator('[data-filmstrip-item="true"]').first
+                    # filmstrip_btn = page.locator('[data-filmstrip-item="true"]').first
+                    filmstrip_items = page.locator('[data-filmstrip-item="true"]')
+                    filmstrip_btn = None
+                    for i in range(filmstrip_items.count()):
+                        item = filmstrip_items.nth(i)
+                        text = item.inner_text().strip()
+                        if ":" in text:  # "0:06" 같은 시간 형식이면 영상
+                            filmstrip_btn = item
+                            break
+
+                    if filmstrip_btn is None:
+                        # 아직 영상 항목이 안 생겼으면 대기
+                        print("  ...영상 항목 아직 생성 안됨")
+                        page.wait_for_timeout(5000)
+                        continue
 
                     # ✅ 진행률 오버레이(퍼센트 텍스트)가 아직 남아있는지 확인
                     progress_overlay = filmstrip_btn.locator("div.absolute.inset-0")
@@ -178,10 +193,13 @@ def run_grok_video():
                     """)
                     download_btn = page.get_by_role("button", name="다운로드")
                     btn_ready = download_btn.is_visible() and download_btn.is_enabled()
-
-                    if is_playing and btn_ready:
-                        print(f"[{image_number}/{total}] 영상 생성 완료! (재생 + 다운로드 버튼 확인)")
+                    if btn_ready:
+                        print(f"[{image_number}/{total}] 영상 생성 완료! (다운로드 버튼 확인)")
                         break
+
+                    # if is_playing and btn_ready:
+                    #     print(f"[{image_number}/{total}] 영상 생성 완료! (재생 + 다운로드 버튼 확인)")
+                    #     break
                 except Exception as e:
                     print(f"  체크 중 오류(무시): {e}")
                 page.wait_for_timeout(5000)
@@ -196,11 +214,15 @@ def run_grok_video():
 
             # 다운로드
             save_path = VIDEO_DIR / f"{image_number:02d}.mp4"
-            with page.expect_download() as download_info:
-                page.get_by_role("button", name="다운로드").click()
-            download = download_info.value
-            download.save_as(save_path)
-            print(f"[{image_number}/{total}] 저장 완료! → {save_path}")
+            try:
+                with page.expect_download(timeout=60000) as download_info:
+                    page.get_by_role("button", name="다운로드").click()
+                download = download_info.value
+                download.save_as(save_path)
+                print(f"[{image_number}/{total}] 저장 완료! → {save_path}")
+            except Exception as e:
+                print(f"[{image_number}/{total}] ❌ 다운로드 실패: {e}")
+                page.screenshot(path=f"debug_download_fail_{image_number}.png")
 
             # 뒤로가기
             human_delay(page, 1500, 2500)
