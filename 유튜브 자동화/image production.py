@@ -88,8 +88,8 @@ def run_flow(prompts, total):
                 if button.is_visible():
                     button.click()
                     page.wait_for_timeout(1000)
-                    page.get_by_role("tab", name="1x").click()
-                    page.get_by_role("tab", name="1x").press("Escape")
+                    page.get_by_role("tab", name="x1").click()
+                    page.get_by_role("tab", name="x1").press("Escape")
 
                 # 에이전트 버튼 활성화 여부 확인 후 비활성화
                 agent_button = page.get_by_role("button", name="에이전트")
